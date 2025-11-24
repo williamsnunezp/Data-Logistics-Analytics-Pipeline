@@ -17,7 +17,7 @@ Este proyecto simula los datos de una empresa logistica (sobre diversos datos de
 - **GitHub** para control de versiones y documentación
 
 ## 🗂️ Componentes del Pipeline
-### 1. Normalización de Datos
+### 1. Normalización de datos en Excel (Power Query)
 - Limpieza, estandarización y separación del dataset en tablas lógicas (transportistas, entregas, productos, origen/destino, etc.).
 - Identificación de claves primarias y relaciones.
 
@@ -27,15 +27,16 @@ Este proyecto simula los datos de una empresa logistica (sobre diversos datos de
 - Crear de claves primarias y foraneas.
 - Modelado de datos (relacion entre tablas) tipo estrella.
 
-### 3. Preparación para Análisis
-- Verificación de relaciones mediante diagramas.
-- Estructura apta para construir dashboards o consultas avanzadas.
+### 3. Conexion PostgreSQL ↔ Power BI
+- Crear la conexion a la base de datos.
+- Automatizar la integracion de nuevos datos y los procesos de transformacion.
+
+### 4. Preparación para Análisis
+- Verificación de las correctas relaciones mediante diagramas.
+- Estructura apta para construir dashboards, consultas avanzadas o KPIs.
 
 ## 📁 Estructura del Repositorio
-- `/data` – Dataset limpio en Excel.
-- `/notebooks` – Procesamiento y carga con Python.
-- `/docs` – Documentación del proceso.
-- `README.md` – Información general del proyecto.
+
 
 ## 🚀 Estado Actual
 Normalización completada y tablas conectadas en Power Pivot. En progreso: carga final hacia PostgreSQL y preparación para dashboards analíticos.
