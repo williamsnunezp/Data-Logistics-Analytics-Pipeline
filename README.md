@@ -24,8 +24,8 @@ Este proyecto simula los datos de una empresa logistica (sobre diversos datos de
 ### 2. Conexión Python ↔ Excel ↔ PostgreSQL
 - Lectura del archivo Excel estructurado.
 - Conexion con PostgreSQL y creación automática de tablas.
-- Identificación de claves primarias y foraneas.
-- Crear el modelado de datos (realcion entre tablas) tipo estrella.
+- Crear de claves primarias y foraneas.
+- Modelado de datos (relacion entre tablas) tipo estrella.
 
 ### 3. Preparación para Análisis
 - Verificación de relaciones mediante diagramas.
