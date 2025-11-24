@@ -1,0 +1,14 @@
+{
+  "name": "Codespace con PostgreSQL",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "db",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [5432],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-ossdata.vscode-postgresql"
+      ]
+    }
+  }
+}
