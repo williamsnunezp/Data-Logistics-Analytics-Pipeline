@@ -1,28 +1,31 @@
 # Data-Logistics-Analytics
 
-Proyecto orientado al análisis y procesamiento de datos logísticos utilizando Python, Excel y PostgreSQL. Este repositorio documenta el flujo completo desde la normalización del dataset original hasta su integración en una base de datos relacional para posteriores análisis e informes.
+Proyecto orientado al análisis y procesamiento de datos, utilizando Excel, Python, PostgreSQL y Power BI. Este repositorio documenta el flujo completo desde la normalización del dataset original hasta su integración en una base de datos relacional para posteriores análisis e informes mediante la creacion de un dashboard.
+
+Este proyecto simula los datos de una empresa logistica (sobre diversos datos de tiempos logísticos) que cuenta con sucursales en la nacion de colombia teniendo como socio a distribuidoras, los datos fueron sacados del portal de datos abiertos del gobierno colombiano: https://www.datos.gov.co/Transporte/Tiempos-Log-sticos-de-cada-viaje-de-veh-culos-de-c/tfrd-amb4/about_data
 
 ## 📌 Objetivos del Proyecto
 - Transformar un dataset logístico originalmente plano en un conjunto de tablas normalizadas.
-- Conectar y cargar estas tablas desde Excel hacia PostgreSQL utilizando Python.
+- Conectar y cargar estas tablas desde hacia PostgreSQL utilizando Python.
 - Preparar la estructura necesaria para futuros análisis, dashboards y automatizaciones.
 
 ## 🔧 Tecnologías Utilizadas
 - **Python** (pandas, SQLAlchemy, psycopg2)
 - **PostgreSQL**
-- **Excel / Power Pivot**
-- **Jupyter Notebooks**
+- **Excel / Power Query**
+- **SQL**
 - **GitHub** para control de versiones y documentación
 
 ## 🗂️ Componentes del Pipeline
 ### 1. Normalización de Datos
-- Limpieza, estandarización y separación del dataset en tablas lógicas (vehículos, viajes, clientes, origen/destino, etc.).
+- Limpieza, estandarización y separación del dataset en tablas lógicas (transportistas, entregas, productos, origen/destino, etc.).
 - Identificación de claves primarias y relaciones.
 
 ### 2. Conexión Python ↔ Excel ↔ PostgreSQL
 - Lectura del archivo Excel estructurado.
-- Creación automática de tablas (si no existen) en PostgreSQL.
-- Inserción de datos normalizados desde pandas hacia la base de datos.
+- Conexion con PostgreSQL y creación automática de tablas.
+- Identificación de claves primarias y foraneas.
+- Crear el modelado de datos (realcion entre tablas) tipo estrella.
 
 ### 3. Preparación para Análisis
 - Verificación de relaciones mediante diagramas.
