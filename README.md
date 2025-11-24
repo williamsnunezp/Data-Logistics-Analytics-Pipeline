@@ -18,43 +18,89 @@ Este proyecto simula los datos de una empresa logistica (sobre diversos datos de
 - **SQL**
 - **GitHub** para control de versiones y documentación
 
-## 🗂️ Componentes del Pipeline
+## 🔧 Desarrollo y Componentes del Pipeline
 
-### 1️⃣ Normalización de datos (Excel + Power Query)
+A continuación se detalla el flujo completo aplicado en este proyecto, desde la normalización inicial del dataset hasta su carga y modelado dentro de PostgreSQL para análisis posteriores en Power BI.
 
-- Limpieza y estandarización de variables.  
-- Separación del dataset en entidades lógicas (productos, vehículos, empresas, ciudades, viajes, etc.).  
-- Identificación de **claves primarias** y definición de relaciones.  
-- Generación del archivo Excel con múltiples hojas listas para importar.
+### 1️⃣ Normalización de datos (Excel / Power Query)
 
----
+Componente:
+Limpieza, estandarización y separación lógica del dataset plano.
 
-### 2️⃣ Integración Python → PostgreSQL
+Desarrollo:
+- Se depuraron columnas inconsistentes.
+- Se separaron entidades como transportistas, empresas, viajes, ciudades, etc.
+- Se detectaron llaves primarias y llaves foráneas.
+- Se dejó la estructura lista para migrar a PostgreSQL.
 
-- Lectura del archivo Excel normalizado.  
-- Conexión a la base de datos utilizando SQLAlchemy y psycopg2.  
-- Creación automática de tablas.  
-- Inserción de datos con control de tipos y validaciones.  
-- Aplicación de **claves foráneas** para conectar las tablas en un modelo tipo **estrella**.
+<img src="imagenes/normalizacion.png" alt="Texto alternativo" width="650"/>
 
 ---
 
-### 3️⃣ Conexión PostgreSQL → Power BI
+### 2️⃣ Migración y conexión Python → PostgreSQL
 
-- Creación del modelo de datos utilizando el motor de PostgreSQL.  
-- Establecimiento de relaciones correctas para análisis.  
-- Preparación de medidas y KPIs.  
-- Pipeline preparado para automatizar cargas futuras.
+Componente:
+Carga automática de datos a la base de datos relacional.
+
+Desarrollo:
+
+- Se creó una base de datos nueva en PostgreSQL desde Python usando psycopg2.
+- Se leyeron las hojas del archivo Excel normalizado.
+- Se crearon tablas base e insertaron registros.
+
+📌 Resultado: Base de datos poblada con las tablas normalizadas.
 
 ---
 
-### 4️⃣ Preparación para Análisis y Dashboards
+### 3️⃣ Modelado relacional en PostgreSQL (SQL)
 
-- Validación del modelo relacional mediante diagramas ER.  
-- Estructura compatible con dashboards, informes y exploraciones de datos.  
-- Base sólida para análisis temporales, logísticos y de eficiencia operativa.
+Componente:
+Creación del modelo estrella, claves, relaciones y reglas de integridad.
+
+Desarrollo:
+
+- Se generaron PRIMARY KEY para cada tabla.
+- Se crearon FOREIGN KEY según las relaciones del modelo lógico.
+- Se conectaron las tablas en un esquema tipo estrella.
+- Se validaron las relaciones mediante el diagrama ER en la extensión de PostgreSQL para VS Code.
+
+<img src="imagenes/esquemaER.png" alt="Texto alternativo" width="350"/>
+
+---
+
+### 4️⃣ Columnas calculadas y automatización (SQL)
+
+Descripción:
+Optimización del modelo mediante cálculos derivados y preparación para automatizar procesos futuros.
+
+Acciones realizadas:
+
+- Creación de columnas calculada para indicadores relevantes.
+- Ajustes adicionales de negocio para métricas.
+- Diseño inicial (planeado) de un procedimiento almacenado que agilice la inserción de nuevos registros manteniendo integridad referencial.
+
+📌 Resultado: Modelo relacional robusto y listo para análisis escalables.
+
+---
+
+###  5. Integración con Power BI (Objetivo Final)
+
+Descripción:
+Conexión del modelo relacional hacia Power BI para análisis visual y creación del dashboard final.
+
+Tareas previstas:
+
+- Conexión directa a PostgreSQL desde Power BI.
+- Creación de una tabla calendario (Date Table).
+- Implementación de medidas y KPIs con DAX.
+- Construcción del dashboard analítico de tiempos logísticos.
+
+📌 Estado: En preparación.
+
+---
 
 ## 📁 Estructura del Repositorio
+
 Data-Logistics-Analytics-Pipeline/
 │
 ├── data/ # Archivo Excel normalizado (dataset limpio y dividido)
@@ -74,6 +120,7 @@ Data-Logistics-Analytics-Pipeline/
 │
 └── README.md # Documentación principal del proyecto
 
+---
 
 ## 🚀 Estado Actual
 Normalización completada y tablas conectadas en Power Pivot. En progreso: carga final hacia PostgreSQL y preparación para dashboards analíticos.
