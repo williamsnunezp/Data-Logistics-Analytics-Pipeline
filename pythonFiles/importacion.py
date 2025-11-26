@@ -4,11 +4,11 @@ from sqlalchemy import create_engine
 
 # CONFIGURACIÓN
 excel_file = "/workspaces/Data-Logistics-Analytics-Pipeline/Data/logisticData.xlsx"    # Ruta del Excel
-db_user = "postgres"
+db_user = "miusuario"
 db_pass = "12345"
 db_host = "postgres"
 db_port = "5432"
-db_name = "logistics_db"          # Tu base ya creada
+db_name = "logistics_db"          # base ya creada
 
 # Crear conexión con SQLAlchemy
 engine_str = f"postgresql+psycopg2://{db_user}:{db_pass}@{db_host}:{db_port}/{db_name}"

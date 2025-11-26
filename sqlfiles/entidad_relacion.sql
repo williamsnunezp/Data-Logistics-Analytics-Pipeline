@@ -17,8 +17,8 @@ ALTER TABLE transportistas
 ADD CONSTRAINT pk_transportistas 
 PRIMARY KEY ("COD_PLACA");
 
-ALTER TABLE empresa_trans
-ADD CONSTRAINT pk_empresa_trans
+ALTER TABLE empresa_transporte
+ADD CONSTRAINT pk_empresa_transporte
 PRIMARY KEY ("COD_EMPRESATRANSPORTE");
 
 ALTER TABLE ciudad_destino
@@ -45,9 +45,9 @@ REFERENCES transportistas("COD_PLACA");
 
 -- Conectar tabla enmpresa transporte con tabla entregas
 ALTER TABLE entregas
-ADD CONSTRAINT fk_entregas_empresa_trans
+ADD CONSTRAINT fk_entregas_empresa_transporte
 FOREIGN KEY ("COD_EMPRESATRANSPORTE")
-REFERENCES empresa_trans("COD_EMPRESATRANSPORTE");
+REFERENCES empresa_transporte("COD_EMPRESATRANSPORTE");
 
 -- Conectar tabla ciudad destino con tabla entregas
 ALTER TABLE entregas

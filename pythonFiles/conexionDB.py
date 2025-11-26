@@ -1,20 +1,20 @@
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import psycopg2.sql as sql
-import os
+#import os
 
 # 1. Recuperación SEGURA de variables de entorno
 # Usa el nombre de la variable (DB_USER, DB_PASS, etc.) en el diccionario de conexión.
 # DB_USER = os.environ.get('POSTGRES_USER', 'miusuario') 
-DB_PASS = os.environ.get('POSTGRES_PASS') 
+# DB_PASS = os.environ.get('POSTGRES_PASS') 
 # DB_HOST = os.environ.get('POSTGRES_HOST', 'localhost')
 # DB_PORT = os.environ.get('POSTGRES_PORT', '5432')
 
 # 2. Datos de conexión (apuntando a la base de datos del sistema 'postgres')
 db_params = {
     # Usamos las VARIABLES que contienen los valores recuperados
-    'user': 'postgres',
-    'password': DB_PASS,
+    'user': 'miusuario',
+    'password': 12345,
     'host': 'postgres', 
     'port': 5432,
     'dbname': 'postgres' # Conéctate a 'postgres' para crear otras bases de datos
