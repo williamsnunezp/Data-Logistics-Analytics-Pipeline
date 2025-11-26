@@ -13,7 +13,7 @@ services:
     image: postgres:14-alpine
     environment:
       POSTGRES_PASSWORD: 12345
-      POSTGRES_USER: miusuario      
+      POSTGRES_USER: postgres      
 #      POSTGRES_DB: mibasedatos
     volumes:
       - postgres-data:/var/lib/postgresql/data

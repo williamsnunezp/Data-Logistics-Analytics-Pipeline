@@ -13,9 +13,9 @@ DB_PASS = os.environ.get('POSTGRES_PASS')
 # 2. Datos de conexión (apuntando a la base de datos del sistema 'postgres')
 db_params = {
     # Usamos las VARIABLES que contienen los valores recuperados
-    'user': 'miusuario',
+    'user': 'postgres',
     'password': DB_PASS,
-    'host': 'localhost', 
+    'host': 'postgres', 
     'port': 5432,
     'dbname': 'postgres' # Conéctate a 'postgres' para crear otras bases de datos
 }
