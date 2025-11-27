@@ -102,7 +102,14 @@ Tareas previstas:
 
 ## 📁 Estructura del Repositorio
 
-Data-Logistics-Analytics-Pipeline/ │ ├── data/ # Dataset limpio y dividido (Excel) ├── pythonFiles/ # Scripts de conexión y carga (psycopg2) ├── sqlFiles/ # Consultas SQL, creación de esquema y análisis ├── imagenes/ # Imágenes de documentación ├── powerbi/ # (Pendiente) Archivo Power BI (.pbix) └── README.md # Documentación principal
+Data-Logistics-Analytics-Pipeline/
+│
+├── data/              # Dataset limpio y dividido (Excel)
+├── pythonFiles/       # Scripts de conexión y carga (psycopg2)
+├── sqlFiles/          # Consultas SQL, creación de esquema y análisis
+├── imagenes/          # Imágenes de documentación
+├── powerbi/           # (Pendiente) Archivo Power BI (.pbix)
+└── README.md          # Documentación principal
 ---
 
 ## 🚀 Estado Actual
