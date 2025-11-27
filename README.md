@@ -19,7 +19,7 @@ Este proyecto simula los datos de una empresa logistica (sobre diversos datos de
 | **Excel / Power Query** | Limpieza y Normalización inicial |
 | **SQL** | Definición del esquema y Análisis de negocio |
 
-## 🔧 Desarrollo y Componentes del Pipeline
+## 🚀 Desarrollo y Componentes del Pipeline
 
 A continuación, se detalla el flujo completo aplicado en este proyecto, desde la normalización inicial hasta el modelado para Power BI.
 
@@ -112,5 +112,3 @@ Data-Logistics-Analytics-Pipeline/
 └── README.md          # Documentación principal
 ---
 
-## 🚀 Estado Actual
-Normalización completada y tablas conectadas en Power Pivot. En progreso: carga final hacia PostgreSQL y preparación para dashboards analíticos.
