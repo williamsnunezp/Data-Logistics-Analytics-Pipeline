@@ -96,9 +96,9 @@ Tareas previstas:
 - Implementación de **medidas y KPIs** con DAX.
 - Construcción del *dashboard* analítico de **tiempos logísticos**.
 
----
-
 📌 Estado: En preparación.
+
+---
 
 ## 📁 Estructura del Repositorio
 
