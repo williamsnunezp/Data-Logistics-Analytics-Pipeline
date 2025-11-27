@@ -4,23 +4,24 @@ Proyecto orientado al análisis y procesamiento de datos, utilizando Excel, Pyth
 
 Este proyecto simula los datos de una empresa logistica (sobre diversos datos de tiempos logísticos) que cuenta con sucursales en la nacion de colombia teniendo como socio a distribuidoras, los datos fueron sacados del portal de datos abiertos del gobierno colombiano: 
 
-➡️ https://www.datos.gov.co/Transporte/Tiempos-Log-sticos-de-cada-viaje-de-veh-culos-de-c/tfrd-amb4/about_data
+➡️ **Fuente de Datos:** [Tiempos Logísticos - datos.gov.co](https://www.datos.gov.co/Transporte/Tiempos-Log-sticos-de-cada-viaje-de-veh-culos-de-c/tfrd-amb4/about_data)
 
 ## 📌 Objetivos del Proyecto
-- Transformar un dataset logístico originalmente plano en un conjunto de tablas normalizadas.
-- Conectar y cargar estas tablas desde hacia PostgreSQL utilizando Python.
-- Preparar la estructura necesaria para futuros análisis, dashboards y automatizaciones.
+* Transformar un *dataset* logístico plano en un conjunto de tablas **normalizadas**.
+* Conectar y cargar estas tablas hacia **PostgreSQL** usando Python.
+* Preparar la estructura para análisis estratégicos y *dashboards*.
 
 ## 🔧 Tecnologías Utilizadas
-- **Python** (pandas, SQLAlchemy, psycopg2)
-- **PostgreSQL**
-- **Excel / Power Query**
-- **SQL**
-- **GitHub** para control de versiones y documentación
+| Herramienta | Uso Principal |
+| :--- | :--- |
+| **Python** (pandas, SQLAlchemy) | ETL, Conexión y Carga de datos |
+| **PostgreSQL** | Almacenamiento, Modelado Relacional y Consultas |
+| **Excel / Power Query** | Limpieza y Normalización inicial |
+| **SQL** | Definición del esquema y Análisis de negocio |
 
 ## 🔧 Desarrollo y Componentes del Pipeline
 
-A continuación se detalla el flujo completo aplicado en este proyecto, desde la normalización inicial del dataset hasta su carga y modelado dentro de PostgreSQL para análisis posteriores en Power BI.
+A continuación, se detalla el flujo completo aplicado en este proyecto, desde la normalización inicial hasta el modelado para Power BI.
 
 ### 1️⃣ Normalización de datos (Excel / Power Query)
 
@@ -68,58 +69,40 @@ Desarrollo:
 
 ---
 
-### 4️⃣ Columnas calculadas y automatización (SQL)
+### 4️⃣ Columnas Calculadas y Análisis Estratégico (SQL)
 
-Descripción:
-Optimización del modelo mediante cálculos derivados y preparación para automatizar procesos futuros.
+Componente:
+**Enriquecimiento del modelo para *Business Intelligence* (BI).**
 
-Acciones realizadas:
+Desarrollo:
+- Se implementó una columna **`GENERATED ALWAYS AS`** para la **identificación legible** de la empresa de transporte.
+- Se desarrollaron **consultas estratégicas** utilizando **CTEs** y **funciones de agregación** para medir:
+    * **Rentabilidad por Hora** (Valor Pagado / Tiempo Total de Ciclo).
+    * **Eficiencia Geográfica** y **Tiempos de Manejo** por destino.
+    * **Consolidación de Carga** (análisis de la frecuencia de remesas).
 
-- Creación de columnas calculada para indicadores relevantes.
-- Ajustes adicionales de negocio para métricas.
-- Diseño inicial (planeado) de un procedimiento almacenado que agilice la inserción de nuevos registros manteniendo integridad referencial.
-
-📌 Resultado: Modelo relacional robusto y listo para análisis escalables.
+📌 **Resultado:** Modelo robusto y enriquecido, listo para análisis escalables.
 
 ---
 
-###  5. Integración con Power BI (Objetivo Final)
+### 5️⃣ Integración con Power BI (Objetivo Final)
 
-Descripción:
-Conexión del modelo relacional hacia Power BI para análisis visual y creación del dashboard final.
+Estado: **En Preparación.**
 
 Tareas previstas:
+- Conexión directa a PostgreSQL y validación del esquema.
+- Creación de tablas de soporte (e.g., Tabla Calendario).
+- Realizar transformaciones, limpiezas previas y columnas calculadas.
+- Implementación de **medidas y KPIs** con DAX.
+- Construcción del *dashboard* analítico de **tiempos logísticos**.
 
-- Conexión directa a PostgreSQL desde Power BI.
-- Creación de una tabla calendario (Date Table).
-- Implementación de medidas y KPIs con DAX.
-- Construcción del dashboard analítico de tiempos logísticos.
+---
 
 📌 Estado: En preparación.
 
----
-
 ## 📁 Estructura del Repositorio
 
-Data-Logistics-Analytics-Pipeline/
-│
-├── data/ # Archivo Excel normalizado (dataset limpio y dividido)
-│ └── logisticData.xlsx
-│
-├── pythonFiles/ # Scripts de conexión, carga y validación hacia PostgreSQL
-│ └── *.py
-│
-├── sqlFiles/ # Consultas SQL, creación de tablas y claves foráneas
-│ └── *.sql
-│
-├── imagenes/ # Imágenes utilizadas en el README o documentación
-│ └── *.png / *.jpg
-│
-├── powerbi/ # (Pendiente) Archivo Power BI y assets internos
-│ └── * (modelos pbix desglosados)
-│
-└── README.md # Documentación principal del proyecto
-
+Data-Logistics-Analytics-Pipeline/ │ ├── data/ # Dataset limpio y dividido (Excel) ├── pythonFiles/ # Scripts de conexión y carga (psycopg2) ├── sqlFiles/ # Consultas SQL, creación de esquema y análisis ├── imagenes/ # Imágenes de documentación ├── powerbi/ # (Pendiente) Archivo Power BI (.pbix) └── README.md # Documentación principal
 ---
 
 ## 🚀 Estado Actual
