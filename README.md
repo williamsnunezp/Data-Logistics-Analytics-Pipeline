@@ -87,7 +87,7 @@ Desarrollo:
 
 ### 5️⃣ Análisis y Visualización de Datos (Power BI)
 
-<img src="imagenes/Dashboard.png" alt="Texto alternativo" width="650"/>
+<img src="imagenes/Dashboard.png" alt="Texto alternativo" width="700"/>
 
 Componente:
 **Implementación del modelo DAX y diseño de *dashboards* para toma de decisiones.**
