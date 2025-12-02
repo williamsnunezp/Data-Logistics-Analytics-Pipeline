@@ -85,30 +85,38 @@ Desarrollo:
 
 ---
 
-### 5️⃣ Integración con Power BI (Objetivo Final)
+### 5️⃣ Análisis y Visualización de Datos (Power BI)
 
-Estado: **En Preparación.**
+<img src="imagenes/Dashboard.png" alt="Texto alternativo" width="650"/>
 
-Tareas previstas:
-- Conexión directa a PostgreSQL y validación del esquema.
-- Creación de tablas de soporte (e.g., Tabla Calendario).
-- Realizar transformaciones, limpiezas previas y columnas calculadas.
-- Implementación de **medidas y KPIs** con DAX.
-- Construcción del *dashboard* analítico de **tiempos logísticos**.
+Componente:
+**Implementación del modelo DAX y diseño de *dashboards* para toma de decisiones.**
 
-📌 Estado: En preparación.
+Desarrollo:
+Se completó la definición de las medidas clave y el modelo de datos en formato proyecto (`.pbip`) para asegurar la trazabilidad.
+
+* **Modelo Relacional Confirmado:** El esquema `star schema` fue implementado y validado en Power BI, con la tabla de hechos (`public entregas`) conectada a todas las dimensionales.
+* **Columnas de Tiempo Derivadas:** Se crearon las columnas `Día de la Semana` y **`Franjahoraria`** (Mañana, Tarde, Noche, Madrugada) para el análisis de comportamiento temporal.
+* **KPIs de Eficiencia (DAX):** Se definieron medidas críticas para el análisis del rendimiento logístico:
+    * **Rentabilidad $/h:** Mide el ingreso por hora de viaje (`VALOR_PAGADO` / `HORAS_VIAJE`).
+    * **Tiempo Total (Ciclo Logístico):** Suma todas las horas de viaje, cargue, descargue y espera.
+    * **Tiempo Espera Promedio:** Concentra la ineficiencia de muelles.
+
+📌 **Resultado:** Modelo DAX robusto, listo para la construcción del *dashboard* final, permitiendo segmentar el rendimiento por tiempo, destino, y naturaleza de la carga.
 
 ---
 
 ## 📁 Estructura del Repositorio
-
+```
 Data-Logistics-Analytics-Pipeline/
 │
 ├── data/              # Dataset limpio y dividido (Excel)
 ├── pythonFiles/       # Scripts de conexión y carga (psycopg2)
 ├── sqlFiles/          # Consultas SQL, creación de esquema y análisis
 ├── imagenes/          # Imágenes de documentación
-├── powerbi/           # (Pendiente) Archivo Power BI (.pbix)
+├── powerbi/           # Archivo Power BI (.pbib)
 └── README.md          # Documentación principal
+```
+
 ---
 
