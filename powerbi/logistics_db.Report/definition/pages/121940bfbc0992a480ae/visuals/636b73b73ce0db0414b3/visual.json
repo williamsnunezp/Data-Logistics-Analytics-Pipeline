@@ -1,0 +1,206 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "636b73b73ce0db0414b3",
+  "position": {
+    "x": 15.944257381420426,
+    "y": 317.29072189026647,
+    "z": 10002,
+    "height": 389.03988010665842,
+    "width": 516.59393915802184,
+    "tabOrder": 10002
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "public productos"
+                    }
+                  },
+                  "Property": "PRODUCTO"
+                }
+              },
+              "queryRef": "public productos.PRODUCTO",
+              "nativeQueryRef": "PRODUCTO"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TablaMedidas"
+                    }
+                  },
+                  "Property": "Recuentoentrega"
+                }
+              },
+              "queryRef": "TablaMedidas.Recuentoentrega",
+              "nativeQueryRef": "Recuento",
+              "displayName": "Recuento"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TablaMedidas"
+                    }
+                  },
+                  "Property": "AVGTiempoActivo"
+                }
+              },
+              "queryRef": "TablaMedidas.TiempoActivo",
+              "nativeQueryRef": "T. activo",
+              "displayName": "T. activo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TablaMedidas"
+                    }
+                  },
+                  "Property": "AVGTiempoEspera"
+                }
+              },
+              "queryRef": "TablaMedidas.TiempoEspera",
+              "nativeQueryRef": "T. espera",
+              "displayName": "T. espera"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "TablaMedidas"
+                  }
+                },
+                "Property": "Recuentoentrega"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "276.691676771364D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "public productos.PRODUCTO"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "77.86197850199444D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "TablaMedidas.TiempoActivo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "75.95049802914573D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "TablaMedidas.Recuentoentrega"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "90672487028ee5474886",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "public productos"
+              }
+            },
+            "Property": "PRODUCTO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a78b9738721c58daad9a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TablaMedidas"
+              }
+            },
+            "Property": "Recuentoentrega"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "57b624425cc1529093db",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TablaMedidas"
+              }
+            },
+            "Property": "AVGTiempoActivo"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c88169ff071b76956c39",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TablaMedidas"
+              }
+            },
+            "Property": "AVGTiempoEspera"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

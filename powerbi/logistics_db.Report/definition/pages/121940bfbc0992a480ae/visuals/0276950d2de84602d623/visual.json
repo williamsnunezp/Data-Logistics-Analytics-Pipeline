@@ -1,0 +1,144 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "0276950d2de84602d623",
+  "position": {
+    "x": 953.46659140894144,
+    "y": 317.29072189026647,
+    "z": 10001,
+    "height": 389.03988010665842,
+    "width": 310.91301893769833,
+    "tabOrder": 10001
+  },
+  "visual": {
+    "visualType": "funnel",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calendario_cargue"
+                    }
+                  },
+                  "Property": "dia_nomb"
+                }
+              },
+              "queryRef": "Calendario_cargue.dia_nomb",
+              "nativeQueryRef": "dia_nomb",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TablaMedidas"
+                    }
+                  },
+                  "Property": "AVGTiempoEspera"
+                }
+              },
+              "queryRef": "TablaMedidas.AVGTiempoEspera",
+              "nativeQueryRef": "AVGTiempoEspera"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "TablaMedidas"
+                  }
+                },
+                "Property": "AVGTiempoEspera"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'InsideCenter'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tiempo de espera (h) por dia'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4773f05a7700736c3d1b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Calendario_cargue"
+              }
+            },
+            "Property": "dia_nomb"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c63faaba1621ed71aba7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TablaMedidas"
+              }
+            },
+            "Property": "AVGTiempoEspera"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
